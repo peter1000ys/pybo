@@ -87,3 +87,6 @@ def reviews_delete(request, movie_pk, review_pk):
     if request.user == review.user:
         review.delete()
     return redirect('movies:detail', movie_pk)
+
+def page_not_found(request, exception):
+    return render(request, 'movies/404.html', {})
